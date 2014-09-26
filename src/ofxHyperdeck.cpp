@@ -10,7 +10,7 @@
 
 
 void ofxHyperdeck::setup(string ip){
-     hyperdeck.setup(ip,993);
+     hyperdeck.setup(ip,9993);
      //optionally set the delimiter to something else.  The delimter in the client and the server have to be the same, default being [/hyperdeck]
      hyperdeck.setMessageDelimiter("\n");
 }

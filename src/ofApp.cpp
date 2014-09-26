@@ -5,7 +5,7 @@ void ofApp::setup(){
      ofSetVerticalSync(true);
      
      //setup the server to listen on 11999
-     hyperdeck.setup("192.168.1.88");
+     hyperdeck.setup("127.0.0.1");
      
 }
 
@@ -40,6 +40,11 @@ void ofApp::keyPressed(int key){
           case '5':
                hyperdeck.goToClipEnd();
                break;
+          case 's':
+               hyperdeck.setVideoInputType("SDI");
+               break;
+               
+               
 
      }
 
