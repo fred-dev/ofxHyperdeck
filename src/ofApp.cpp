@@ -3,12 +3,13 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
      ofSetVerticalSync(true);
-     
+     ofLog(verbose);
      //setup the server to listen on 11999
-     hyperdeck.setup("127.0.0.1");
+     hyperdeck.setup("192.168.1.50");
+     
      
 }
-
+ 
 //--------------------------------------------------------------
 void ofApp::update(){
 
@@ -32,7 +33,7 @@ void ofApp::keyPressed(int key){
                break;
           case '3':
                hyperdeck.goToTimecode("00:00:30:22");
-               hyperdeck.play();
+             
                break;
           case '4':
                hyperdeck.goToClipStart();

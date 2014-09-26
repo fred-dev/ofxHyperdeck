@@ -12,22 +12,34 @@
 	<dict>
 		<key>2DE9C8846D9375EAACFABA8963120E8E7719BAF5</key>
 		<string>https://github.com/openframeworks/openFrameworks.git</string>
+		<key>F07AB09DC2FD5461B05B3DE795E5CF1E51023B92</key>
+		<string>https://github.com/fred-dev/ofxHyperdeck.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>apps/LargeCameraArray/ofxHyperdeck/ofxHyperdeck.xcodeproj</string>
+	<string>ofxHyperdeck.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2DE9C8846D9375EAACFABA8963120E8E7719BAF5</key>
-		<string>../../../../..</string>
+		<string>../../../openFrameworks</string>
+		<key>F07AB09DC2FD5461B05B3DE795E5CF1E51023B92</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/openframeworks/openFrameworks.git</string>
+	<string>https://github.com/fred-dev/ofxHyperdeck.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2DE9C8846D9375EAACFABA8963120E8E7719BAF5</string>
+	<string>F07AB09DC2FD5461B05B3DE795E5CF1E51023B92</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F07AB09DC2FD5461B05B3DE795E5CF1E51023B92</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxHyperdeck</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -40,7 +40,10 @@ public:
      void setAudioInputType(string inputType);
      void selectSlot(int slot);
      void setFileFormat(string format);
-     
+     bool checkConnection();
+     bool _connected;
+     void reconnect();
+     string _ip;
      
      
      ofxTCPClient hyperdeck;
