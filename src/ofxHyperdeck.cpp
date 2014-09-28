@@ -36,146 +36,146 @@ bool ofxHyperdeck::checkConnection(){
 }
 void ofxHyperdeck::play(){
      
-     hyperdeck.send("play");
-     hyperdeck.send("\r");
+     hyperdeck.sendRaw("play");
+     hyperdeck.sendRaw("\r\n");
     }
 
 void ofxHyperdeck::stop(){
      
-     hyperdeck.send("stop");
-     hyperdeck.send("\r");
+     hyperdeck.sendRaw("stop");
+     hyperdeck.sendRaw("\r\n");
      
 }
 
 bool ofxHyperdeck::getRemote(){
      
-     hyperdeck.send("remote");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("remote");
+      hyperdeck.sendRaw("\r\n");
 }
 
 void ofxHyperdeck::setOverride(bool _overRide){
  
      if (_overRide) {
-          hyperdeck.send("remote:override:true");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("remote:override:true");
+           hyperdeck.sendRaw("\r\n");
      }
      if (!_overRide) {
-          hyperdeck.send("remote:override:false");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("remote:override:false");
+           hyperdeck.sendRaw("\r\n");
      }
      
 }
 void ofxHyperdeck::setRemote(bool _remote){
    
      if (_remote) {
-          hyperdeck.send("remote:enable:true");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("remote:enable:true");
+           hyperdeck.sendRaw("\r\n");
 
      }
      if (!_remote) {
-          hyperdeck.send("remote:enable:false");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("remote:enable:false");
+           hyperdeck.sendRaw("\r\n");
 
      }
 }
 void ofxHyperdeck::exit(){
      
-     hyperdeck.send("quit");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("quit");
+      hyperdeck.sendRaw("\r\n");
 }
 void ofxHyperdeck::togglePreview(bool _preview){
    
      if (_preview) {
-          hyperdeck.send("preview:enable:true");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("preview:enable:true");
+           hyperdeck.sendRaw("\r\n");
      }
      if (!_preview) {
-          hyperdeck.send("preview:enable:false");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("preview:enable:false");
+           hyperdeck.sendRaw("\r\n");
      }
      
 }
 void ofxHyperdeck::playWithSpeed(float speed){
      
      if (speed>-1600&&speed<1600) {
-          hyperdeck.send("play:speed:"+ofToString(speed)+"");
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("play:speed:"+ofToString(speed)+"");
+           hyperdeck.sendRaw("\r\n");
      }
      else cout<< "Invalid speed, must be between -1600 and 1600"<<endl;
      
 }
 void ofxHyperdeck::playWithLoop(){
  
-     hyperdeck.send("play:loop:true");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("play:loop:true");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::playSingleClip(){
 
-     hyperdeck.send("play:single clip:true");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("play:single clip:true");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::record(){
      
-     hyperdeck.send("record");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("record");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::recordWithName(string name){
    
-     hyperdeck.send("record:name:" + name +"");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("record:name:" + name +"");
+      hyperdeck.sendRaw("\r\n");
 
 }
 
 void ofxHyperdeck::goToClip(int clipId){
     
-     hyperdeck.send("goto:clip:" + ofToString(clipId));
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:clip:" + ofToString(clipId));
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::goToClipStart(){
      
-     hyperdeck.send("goto:clip:start");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:clip:start");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::goToClipEnd(){
     
-     hyperdeck.send("goto:clip:end");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:clip:end");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::goToTimecode(string timecode){
   
-     hyperdeck.send("goto:timecode:" + timecode );
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:timecode:" + timecode );
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::nudgeTimecodeForwards(string timecode){
     
-     hyperdeck.send("goto:timecode:{+}{" + timecode );
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:timecode:{+}{" + timecode );
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::nudgeTimecodeBack(string timecode){
     
-     hyperdeck.send("goto:timecode:-" + timecode);
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("goto:timecode:-" + timecode);
+      hyperdeck.sendRaw("\r\n");
      
 }
 vector<string > ofxHyperdeck::getClips(){
     
-     hyperdeck.send("clips get");
-      hyperdeck.send("\r\n");
+     hyperdeck.sendRaw("clips get");
+      hyperdeck.sendRaw("\r\n");
 
 }
 void ofxHyperdeck::setVideoInputType(string inputType){
      
      if (inputType=="SDI" || inputType=="HDMI" || inputType=="component") {
-           hyperdeck.send("configuration:video input:"+ inputType);
-           hyperdeck.send("\r\n");
+           hyperdeck.sendRaw("configuration:video input:"+ inputType);
+           hyperdeck.sendRaw("\r\n");
      }
      
      else cout<< "Invalid format, options are SDI, HMDI or compnent"<<endl;
@@ -184,8 +184,8 @@ void ofxHyperdeck::setVideoInputType(string inputType){
 void ofxHyperdeck::setAudioInputType(string inputType){
     
      if (inputType=="embedded" || inputType=="XLR" || inputType=="RCA") {
-          hyperdeck.send("configuration:audio input:"+ inputType);
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("configuration:audio input:"+ inputType);
+           hyperdeck.sendRaw("\r\n");
      }
      
      else cout<< "Invalid format, options are embedded, XLR or RCA"<<endl;
@@ -193,8 +193,8 @@ void ofxHyperdeck::setAudioInputType(string inputType){
 void ofxHyperdeck::selectSlot(int slot){
    
      if (slot==1 or slot==2) {
-          hyperdeck.send("slot select:slot:"+ofToString(slot));
-           hyperdeck.send("\r\n");
+          hyperdeck.sendRaw("slot select:slot:"+ofToString(slot));
+           hyperdeck.sendRaw("\r\n");
      }
      else cout<< "Invalid slot, options are 1 or 2"<<endl;
 
