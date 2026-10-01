@@ -9,16 +9,16 @@
 *.cbp
 xcuserdata/
 .vscode/
-/Makefile
-/config.make
-/Project.xcconfig
-/openFrameworks-Info.plist
-/of.entitlements
-/icon.rc
+*/Makefile
+*/config.make
+*/Project.xcconfig
+*/openFrameworks-Info.plist
+*/of.entitlements
+*/icon.rc
 
 # Build output (bin/data is kept)
-/bin/*
-!/bin/data/
+*/bin/*
+!*/bin/data/
 obj/
 build/
 *.o
